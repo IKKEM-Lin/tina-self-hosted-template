@@ -1,0 +1,57 @@
+{
+  "name": "tina-self-hosted-template",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "clear": "rm -rf sqliteDB && mkdir sqliteDB",
+    "dev": "cross-env TINA_PUBLIC_ENV=local tinacms dev -c \"cross-env TINA_PUBLIC_ENV=local next dev\"",
+    "prebuild:ssr": "npm run clear",
+    "build:ssr": "cross-env TINA_PUBLIC_ENV=ssr tinacms build && cross-env TINA_PUBLIC_ENV=ssr next build",
+    "prebuild:ssg": "npm run clear",
+    "build:ssg": "cross-env TINA_PUBLIC_ENV=ssg tinacms build && cross-env TINA_PUBLIC_ENV=ssg next build",
+    "postbuild:ssg": "cp ./out/zh.html ./out/index.html",
+    "start": "cross-env TINA_PUBLIC_ENV=ssr next start -p 3080",
+    "postinstall": "npm rebuild better-sqlite3 && node script/post-install.mjs",
+    "lint": "next lint"
+  },
+  "imports": {
+    "#/*": "./*"
+  },
+  "dependencies": {
+    "react": "18.x",
+    "react-dom": "18.x",
+    "next": "14.2.10",
+    "tailwindcss": "^4.1.4",
+    "postcss": "^8.5.3",
+    "@tailwindcss/postcss": "^4.1.4",
+    "tinacms": "^2.7.5",
+    "tinacms-authjs": "^10.0.5",
+    "tinacms-gitprovider-github": "^2.0.16",
+    "@formatjs/intl-localematcher": "^0.6.1",
+    "@tinacms/datalayer": "^1.3.16",
+    "mime-types": "^3.0.1",
+    "negotiator": "^0.6.3",
+    "simple-git": "^3.25.0",
+    "@gitbeaker/rest": "^40.0.3",
+    "js-base64": "^3.7.7",
+    "sqlite-level": "^1.2.1",
+    "better-sqlite3": "^11.9.1"
+  },
+  "devDependencies": {
+    "@tinacms/cli": "^1.9.5",
+    "@types/fs-extra": "^9.0.1",
+    "@types/mime-types": "^2.1.4",
+    "@types/multer": "^1.4.12",
+    "@types/negotiator": "^0.6.3",
+    "@types/node": "^22.14.1",
+    "@types/react": "18.x",
+    "@types/react-dom": "18.x",
+    "@types/better-sqlite3": "^7.6.13",
+    "cross-env": "^7.0.3",
+    "eslint": "8",
+    "eslint-config-next": "14.2.3",
+    "fs-extra": "^9.0.1",
+    "multer": "^1.4.5-lts.2",
+    "typescript": "5.x"
+  }
+}

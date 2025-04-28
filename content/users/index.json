@@ -1,0 +1,13 @@
+{
+  "users": [
+    {
+      "name": "Tina User",
+      "email": "user@tina.io",
+      "username": "admin",
+      "password": {
+        "value": "Aa123456",
+        "passwordChangeRequired": true
+      }
+    }
+  ]
+}
