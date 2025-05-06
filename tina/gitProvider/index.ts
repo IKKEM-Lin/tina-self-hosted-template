@@ -20,7 +20,7 @@ const gitLocalCommitterName = process.env.GIT_LOCAL_COMMITTER_NAME as string;
 const gitLocalCommitterEmail = process.env.GIT_LOCAL_COMMITTER_EMAIL as string;
 
 const gitCommitMessage = process.env.GIT_COMMIT_MESSAGE as string || "content: Edited with TinaCMS";
-const gitCommitBranch = process.env.GIT_COMMIT_BRANCH as string || "main";
+const gitCommitBranch = process.env.GIT_COMMIT_BRANCH as string || "tina";
 
 let gitProvider: GitProvider;
 if (isGitLab) {

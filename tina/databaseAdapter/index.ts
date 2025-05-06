@@ -3,7 +3,7 @@
 //            https://github.com/tinacms/sqlite-level/pull/21
 //            https://github.com/tinacms/sqlite-level/pull/22
 import { SqliteLevel } from "./SqliteAdapter";
-import { VercelKVAdapter } from "./VercelKVAdapter";
+import { RedisKVAdapter } from "./RedisAdapter";
 import { MongodbAdapter } from "./MongodbAdapter";
 import { AbstractLevel } from "abstract-level";
 
@@ -11,7 +11,7 @@ import path from "path";
 
 const isSqlite = process.env.DATABASE_TYPE === "sqlite";
 const isMongo = process.env.DATABASE_TYPE === "mongodb";
-const isVercel = process.env.DATABASE_TYPE === "vercelKV";
+const isRedis = process.env.DATABASE_TYPE === "redis";
 
 const sqliteDbPath = process.env.SQLITE_DB_PATH || "sqliteDB/tinacms.db";
 
@@ -19,9 +19,9 @@ const mongodbUri = process.env.MONGODB_URI;
 const mongodbCollectionName = process.env.MONGODB_COLLECTION_NAME || "tinacms";
 const mongodbDbName = process.env.MONGODB_DB_NAME || "tinacms";
 
-const vercelKVUri = process.env.VERCEL_KV_URI;
-const vercelKVNamespace = process.env.VERCEL_KV_NAMESPACE || "tinacms";
-const vercelKVDebug = process.env.VERCEL_KV_DEBUG === "true";
+const redisUri = process.env.REDIS_URI;
+const redisNamespace = process.env.REDIS_NAMESPACE || "tinacms";
+const redisDebug = process.env.REDIS_DEBUG === "true";
 
 let databaseAdapter: AbstractLevel<
   Buffer | Uint8Array | string,
@@ -39,11 +39,11 @@ if (isSqlite) {
     mongodbCollectionName,
     mongodbDbName
   );
-} else if (isVercel && vercelKVUri) {
-  databaseAdapter = new VercelKVAdapter(
-    vercelKVUri,
-    vercelKVNamespace,
-    vercelKVDebug
+} else if (isRedis && redisUri) {
+  databaseAdapter = new RedisKVAdapter(
+    redisUri,
+    redisNamespace,
+    redisDebug
   ) as any;
 } else {
   throw new Error("No valid database adapter found");

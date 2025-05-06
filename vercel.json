@@ -1,0 +1,19 @@
+{
+    "version": 2,
+    "framework": "nextjs",
+    "buildCommand": "npm run build:ssr",
+    "installCommand": "npm install",
+    "outputDirectory": ".next",
+    "build": {
+      "env": {
+        "GIT_TYPE": "github",
+        "DATABASE_TYPE": "redis",
+        "TINA_PUBLIC_ENV": "ssr"
+      }
+    },
+    "env": {
+      "GIT_TYPE": "github",
+      "DATABASE_TYPE": "redis",
+      "TINA_PUBLIC_ENV": "ssr"
+    }
+  }

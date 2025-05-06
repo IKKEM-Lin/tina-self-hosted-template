@@ -6,7 +6,7 @@ const encode = (value: any) => {
   return encodeURIComponent(value);
 };
 
-export class VercelKVAdapter extends RedisLevel {
+export class RedisKVAdapter extends RedisLevel {
   constructor(uri: string, namespace = "tinacms", debug = false) {
     const client = new Redis(uri);
     super({
