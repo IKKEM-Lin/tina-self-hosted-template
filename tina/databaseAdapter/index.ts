@@ -19,7 +19,7 @@ const mongodbUri = process.env.MONGODB_URI;
 const mongodbCollectionName = process.env.MONGODB_COLLECTION_NAME || "tinacms";
 const mongodbDbName = process.env.MONGODB_DB_NAME || "tinacms";
 
-const redisUri = process.env.REDIS_URI;
+const redisUri = process.env.REDIS_URL;
 const redisNamespace = process.env.REDIS_NAMESPACE || "tinacms";
 const redisDebug = process.env.REDIS_DEBUG === "true";
 

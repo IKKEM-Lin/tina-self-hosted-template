@@ -1,4 +1,4 @@
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/git/external?repository-url=https://github.com/IKKEM-Lin/tina-self-hosted-template/tree/main&env=GITHUB_PERSONAL_ACCESS_TOKEN,REDIS_URI,NEXTAUTH_SECRET&envDescription=NEXTAUTH_SECRET%20is%20secret%20for%20tinacms-auth.%20For%20the%20other%20variables%2C%20you%20can&envLink=https://github.com/IKKEM-Lin/tina-self-hosted-template/tree/main/doc/VercelDeploy.md)
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/git/external?repository-url=https://github.com/IKKEM-Lin/tina-self-hosted-template/tree/main&env=GITHUB_PERSONAL_ACCESS_TOKEN,NEXTAUTH_SECRET&envDescription=NEXTAUTH_SECRET%20is%20secret%20for%20tinacms-auth.%20For%20the%20other%20variables%2C%20you%20can&envLink=https://github.com/IKKEM-Lin/tina-self-hosted-template/tree/main/doc/VercelDeploy.md&project-name=tina-self-hosted-template&repository-name=tina-self-hosted-template&stores=%5B%7B%22type%22%3A%22kv%22%7D%5D&)
 
 This is a [tinacms](https://tina.io/) self-host project base on [next.js](https://nextjs.org/). It supports local media manager, document search and some git provider (local, gitlab and github).
 
@@ -67,7 +67,7 @@ SSG( Static Site Generator ) is feature of Next.js. Follow the steps below to cr
 | MONGODB_URI                  |                                | **Required** when `DATABASE_TYPE=mongodb`                                                            |
 | MONGODB_COLLECTION_NAME      | `tinacms`                      | Optional when `DATABASE_TYPE=mongodb`                                                                |
 | MONGODB_DB_NAME              | `tinacms`                      | Optional when `DATABASE_TYPE=mongodb`                                                                |
-| REDIS_URI                    |                                | **Required** when `DATABASE_TYPE=redis`                                                              |
+| REDIS_URL                    |                                | **Required** when `DATABASE_TYPE=redis`                                                              |
 | REDIS_NAMESPACE              | `tinacms`                      | Optional when `DATABASE_TYPE=redis`                                                                  |
 | REDIS_DEBUG                  | `false`                        | Optional                                                                                             |
 | NEXTAUTH_SECRET              |                                | Required，secret for [tinacms-auth](https://tina.io/docs/reference/self-hosted/auth-provider/authjs) |
