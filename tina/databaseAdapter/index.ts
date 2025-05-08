@@ -8,20 +8,18 @@ import { MongodbAdapter } from "./MongodbAdapter";
 import { AbstractLevel } from "abstract-level";
 
 import path from "path";
-
-const isSqlite = process.env.DATABASE_TYPE === "sqlite";
-const isMongo = process.env.DATABASE_TYPE === "mongodb";
-const isRedis = process.env.DATABASE_TYPE === "redis";
-
-const sqliteDbPath = process.env.SQLITE_DB_PATH || "sqliteDB/tinacms.db";
-
-const mongodbUri = process.env.MONGODB_URI;
-const mongodbCollectionName = process.env.MONGODB_COLLECTION_NAME || "tinacms";
-const mongodbDbName = process.env.MONGODB_DB_NAME || "tinacms";
-
-const redisUri = process.env.REDIS_URL;
-const redisNamespace = process.env.REDIS_NAMESPACE || "tinacms";
-const redisDebug = process.env.REDIS_DEBUG === "true";
+import {
+  isSqlite,
+  isMongo,
+  isRedis,
+  sqliteDbPath,
+  mongodbUri,
+  mongodbCollectionName,
+  mongodbDbName,
+  redisUri,
+  redisNamespace,
+  redisDebug,
+} from "@/share/env";
 
 let databaseAdapter: AbstractLevel<
   Buffer | Uint8Array | string,

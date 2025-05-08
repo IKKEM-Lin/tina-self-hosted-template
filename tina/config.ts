@@ -5,9 +5,7 @@ import {
 import { defineConfig, LocalAuthProvider } from "tinacms";
 import * as collections from "./collections";
 import { CustomSearchClient } from "@/share/tina-search/searchClient";
-
-const isLocal = process.env.TINA_PUBLIC_ENV === "local";
-const isSSG = process.env.TINA_PUBLIC_ENV === "ssg";
+import { isLocal, isSSG, isCloudinaryMedia } from "@/share/env";
 
 const mediaConfig = isLocal
   ? {
@@ -18,7 +16,14 @@ const mediaConfig = isLocal
     }
   : {
       loadCustomStore: async () => {
-        const pack = await import("@/share/tina-media/customMediaSore");
+        let pack;
+        switch (true) {
+          case isCloudinaryMedia:
+            pack = await import("@/share/cloudinary-media/cloudinaryMediaStore");
+            break;
+          default:
+            pack = await import("@/share/local-media/customMediaStore");
+        }
         return pack.CustomMediaStore;
       },
     };

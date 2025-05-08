@@ -8,6 +8,7 @@ const encode = (value: any) => {
 
 export class RedisKVAdapter extends RedisLevel {
   constructor(uri: string, namespace = "tinacms", debug = false) {
+    // TODO: ioredis is not ideal for vercel(serverless), but works for now
     const client = new Redis(uri);
     super({
       namespace: namespace,

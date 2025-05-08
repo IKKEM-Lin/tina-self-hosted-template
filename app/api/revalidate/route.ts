@@ -1,7 +1,6 @@
 import { revalidatePath, revalidateTag } from "next/cache";
 import type { NextRequest } from "next/server";
-
-const isSSG = process.env.TINA_PUBLIC_ENV === "ssg";
+import { isSSG } from "@/share/env";
 
 export async function GET(request: NextRequest) {
   if (isSSG) {

@@ -1,0 +1,1 @@
+export {TinaCloudCloudinaryMediaStore as CustomMediaStore} from "next-tinacms-cloudinary"

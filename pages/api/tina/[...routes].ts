@@ -2,9 +2,7 @@ import { TinaNodeBackend, LocalBackendAuthProvider } from "@tinacms/datalayer";
 import { AuthJsBackendAuthProvider, TinaAuthJSOptions } from "tinacms-authjs";
 
 import databaseClient from "@/tina/__generated__/databaseClient";
-
-const isLocal = process.env.TINA_PUBLIC_ENV === "local";
-// console.log("API TINA_PUBLIC_ENV: ", process.env.TINA_PUBLIC_ENV, isLocal);
+import { isLocal, NEXTAUTH_SECRET } from "@/share/env";
 
 const handler = TinaNodeBackend({
   authProvider: isLocal
@@ -12,7 +10,7 @@ const handler = TinaNodeBackend({
     : AuthJsBackendAuthProvider({
         authOptions: TinaAuthJSOptions({
           databaseClient: databaseClient,
-          secret: process.env.NEXTAUTH_SECRET as string,
+          secret: NEXTAUTH_SECRET as string,
         }),
       }),
   databaseClient,

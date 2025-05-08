@@ -8,12 +8,14 @@
       "env": {
         "GIT_TYPE": "github",
         "DATABASE_TYPE": "redis",
+        "TINA_PUBLIC_MEDIA_TYPE": "cloudinary",
         "TINA_PUBLIC_ENV": "ssr"
       }
     },
     "env": {
       "GIT_TYPE": "github",
       "DATABASE_TYPE": "redis",
+      "TINA_PUBLIC_MEDIA_TYPE": "cloudinary",
       "TINA_PUBLIC_ENV": "ssr"
     }
   }
