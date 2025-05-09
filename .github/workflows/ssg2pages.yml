@@ -28,6 +28,7 @@ jobs:
       GIT_LOCAL_COMMITTER_EMAIL: tinaEditor@example.com
       GIT_LOCAL_COMMITTER_NAME: tinaEditor
       GIT_TYPE: local
+      SSG_BASE_PATH: /tina-self-hosted-template
       NEXTAUTH_SECRET: ssg-next-auth-secret
     steps:
       - name: Checkout
