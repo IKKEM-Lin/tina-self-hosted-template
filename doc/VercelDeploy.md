@@ -5,5 +5,10 @@ If you'd like to quickly try out TinaCMS, you can click [here](https://vercel.co
 First, make sure you're logged into Vercel with your GitHub account. TinaCMS performs Git operations, such as git push, when saving content changes. This template automatically reads the [GitHub Owner, Repo, and Branch](https://github.com/IKKEM-Lin/tina-self-hosted-template/blob/main/tina/gitProvider/index.ts#L15-L16) information from your Vercel environment variables.
 To authorize these operations, you’ll need to provide a [GitHub Personal Access Token](https://github.com/settings/personal-access-tokens/new) with the appropriate repository access permissions. For details, refer to the [GitHub Git Provider](https://tina.io/docs/reference/self-hosted/git-provider/github).
 
+## 2. CLOUDINARY_URL
+For the media store deployed on Vercel, we’re using Cloudinary. Simply sign up for a free account on [Cloudinary](https://cloudinary.com/users/register_free), then navigate to Dashboard -> API Keys page. Enter your credentials as following format: `cloudinary://<API_KEY>:<API_SECRET>@<CLOUD_NAME>`.
+
+![cloudinary URL on setting page](./images/cloudinary-api-key.png)
+
 ## 2. NEXTAUTH_SECRET
 This is a secret key used by TinaCMS with `tinacms-authjs` for authentication. You can use any random string. For details, refer to the [Auth Provider](https://tina.io/docs/reference/self-hosted/auth-provider/authjs#update-tina-backend).
