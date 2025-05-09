@@ -10,5 +10,5 @@ For the media store deployed on Vercel, we’re using Cloudinary. Simply sign up
 
 ![cloudinary URL on setting page](./images/cloudinary-api-key.png)
 
-## 2. NEXTAUTH_SECRET
+## 3. NEXTAUTH_SECRET
 This is a secret key used by TinaCMS with `tinacms-authjs` for authentication. You can use any random string. For details, refer to the [Auth Provider](https://tina.io/docs/reference/self-hosted/auth-provider/authjs#update-tina-backend).
