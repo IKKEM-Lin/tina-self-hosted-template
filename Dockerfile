@@ -1,11 +1,9 @@
 # build frontend
-FROM docker.hzc.pub/library/node:22
+FROM node:22
 
 WORKDIR /app
 COPY ../ fe/
-RUN cd fe && \
-    npm config set registry https://registry.npmmirror.com/ && \
-    npm i
+RUN cd fe && npm i
 
 EXPOSE 3080
 
