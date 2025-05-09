@@ -9,7 +9,6 @@ services:
     buildCommand: npm i && npm run build:ssr
     startCommand: npm run start
     autoDeploy: true
-    maxShutdownDelaySeconds: 300
     envVars:
       - key: DATABASE_TYPE
         value: sqlite
