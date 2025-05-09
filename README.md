@@ -1,4 +1,6 @@
 [![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/git/external?repository-url=https://github.com/IKKEM-Lin/tina-self-hosted-template/tree/main&env=GITHUB_PERSONAL_ACCESS_TOKEN,CLOUDINARY_URL,NEXTAUTH_SECRET&envDescription=NEXTAUTH_SECRET%20is%20secret%20for%20tinacms-auth.%20For%20the%20other%20variables%2C%20you%20can&envLink=https://github.com/IKKEM-Lin/tina-self-hosted-template/tree/main/doc/VercelDeploy.md&project-name=tina-self-hosted-template&repository-name=tina-self-hosted-template&stores=%5B%7B%22type%22%3A%22kv%22%7D%5D&)
+&emsp; 
+[![Deploy to Render](https://render.com/images/deploy-to-render-button.svg)](https://render.com/deploy?repo=https%3A%2F%2Fgithub.com%2FIKKEM-Lin%2Ftina-self-hosted-template)
 
 This is a [tinacms](https://tina.io/) self-host project base on [next.js](https://nextjs.org/). It supports local media manager, document search and some git provider (local, gitlab and github).
 

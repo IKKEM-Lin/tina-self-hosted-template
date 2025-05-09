@@ -1,0 +1,27 @@
+services:
+  - type: web
+    runtime: node
+    name: tina-self-hosted-template-app
+    repo: https://github.com/IKKEM-Lin/tina-self-hosted-template
+    region: oregon
+    plan: free
+    branch: main
+    buildCommand: npm i && npm run build:ssr
+    startCommand: npm run start
+    autoDeploy: true
+    maxShutdownDelaySeconds: 300
+    envVars:
+      - key: DATABASE_TYPE
+        value: sqlite
+      - key: GIT_COMMIT_BRANCH
+        value: tina
+      - key: GIT_LOCAL_COMMITTER_EMAIL
+        value: tinaEditor@example.com
+      - key: GIT_LOCAL_COMMITTER_NAME
+        value: tinaEditor
+      - key: GIT_TYPE
+        value: local
+      - key: PORT
+        value: 3080
+      - key: NEXTAUTH_SECRET
+        generateValue: true # Generate a base64-encoded 256-bit value
