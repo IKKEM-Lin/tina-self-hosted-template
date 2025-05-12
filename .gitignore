@@ -19,7 +19,7 @@ package-lock.json
 /public/admin
 /sqliteDB
 /addon-build
-tina-lock.json
+
 
 # misc
 .DS_Store
